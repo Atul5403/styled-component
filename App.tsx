@@ -1,13 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import ButtonElement from './src/singlefile/index'
+import ButtonWithoutStyledComponent from './src/withoutstyledcomponents/index';
+import ButtonElementSingleFile from './src/singlefile/index';
+import ButtonElementMultipleFile from './src/multiplefile/index';
+import WithoutProps from './src/withoutprops/index';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <ButtonElement disabled={false} text={'Hello World!'} />
+      <ButtonWithoutStyledComponent disabled={false} text={'without styled components'} />
+      <ButtonElementSingleFile disabled={false} text={'styled component single file'} />
+      <ButtonElementMultipleFile disabled={false} text={'styled component multiple file'} />
+      <WithoutProps text={'styled component without props'} />
     </View>
   );
 }

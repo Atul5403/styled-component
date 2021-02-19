@@ -3,15 +3,10 @@ import { ViewProps, Text } from 'react-native';
 import styled from 'styled-components/native';
 
 // styled-components props
-interface ButtonProps extends ViewProps {
-    disabled?: boolean;
-    width?: number
-}
 // styled component Button
-const Button = styled.TouchableOpacity<ButtonProps>`
-  background-color: ${props => props.disabled ? 'grey' : `white`};
+const Button = styled.TouchableOpacity`
+  background-color: 'grey';
   align-items: center;
-  width: ${props => props.width};
   padding: 10px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -29,16 +24,15 @@ Button.defaultProps = {
 interface OwnProps {
     onPress?: () => void
     text: string
-    disabled: boolean
 }
 
 // component
-const ButtonElementSingleFile = (ownProps: OwnProps) => {
+const WithoutProps = (ownProps: OwnProps) => {
     return (
-        <Button disabled={ownProps.disabled} onPress={ownProps.onPress}>
+        <Button onPress={ownProps.onPress}>
             <Text>{ownProps.text}</Text>
         </Button>
     )
 }
 
-export default ButtonElementSingleFile
+export default WithoutProps;

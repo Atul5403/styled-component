@@ -3,12 +3,12 @@ import { Text } from 'react-native';
 import { OwnProps } from './type';
 import Button from './styles/Buttonstyles';
 
-const ButtonElement = (ownProps: OwnProps) => {
+const ButtonElementMultipleFile = (ownProps: OwnProps) => {
     return (
-        <Button disabled={false} onPress={ownProps.onPress}>
+        <Button disabled={ownProps.disabled} onPress={ownProps.onPress}>
             <Text>{ownProps.text}</Text>
         </Button>
     )
 }
 
-export default ButtonElement;
+export default ButtonElementMultipleFile;
